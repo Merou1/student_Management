@@ -1,0 +1,19 @@
+<h2>Etablissement Management</h2>
+<form (submit)="assignStudent()">
+  <label for="etablissement">Etablissement:</label>
+  <select id="etablissement" [(ngModel)]="selectedEtablissement" name="etablissement">
+    <option *ngFor="let etablissement of etablissements" [value]="etablissement">{{ etablissement }}</option>
+  </select>
+  <label for="student">Student:</label>
+  <select id="student" [(ngModel)]="selectedStudent" name="student">
+    <option *ngFor="let student of students" [value]="student">{{ student.fullName }}</option>
+  </select>
+  <button type="submit">Assign</button>
+</form>
+
+<h3>Assignments</h3>
+<ul>
+  <li *ngFor="let assignment of assignments">
+    {{ assignment.student.fullName }} -> {{ assignment.etablissement }}
+  </li>
+</ul>

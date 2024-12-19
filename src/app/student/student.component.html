@@ -1,0 +1,28 @@
+<h2>Student Management</h2>
+<form (submit)="addStudent()">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" [(ngModel)]="newStudent.fullName" name="fullName" required>
+  <label for="id">Student ID:</label>
+  <input type="text" id="id" [(ngModel)]="newStudent.studentId" name="studentId" required>
+  <label for="rib">RIB:</label>
+  <input type="text" id="rib" [(ngModel)]="newStudent.rib" name="rib" required>
+  <button type="submit">Add Student</button>
+</form>
+
+<h3>Student List</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Student ID</th>
+      <th>RIB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.fullName }}</td>
+      <td>{{ student.studentId }}</td>
+      <td>{{ student.rib }}</td>
+    </tr>
+  </tbody>
+</table>
